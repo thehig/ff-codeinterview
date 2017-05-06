@@ -1,0 +1,55 @@
+{
+	"folders":
+	[
+		{
+      "name": "root",
+			"path": ".",
+      "folder_exclude_patterns": [
+        "*",
+        ".tmp",
+        "node_modules"
+      ],
+      "file_exclude_patterns": [
+        ".editorconfig",
+        // "*.js",
+        "README.md",
+        "*.sublime-workspace"
+      ]
+		},
+
+    // {
+    //   "path": "config",
+    //   "file_exclude_patterns": [".gitkeep"]
+    // },
+
+    // {
+    //   "name": "public",
+    //   "path": "assets",
+    //   "file_exclude_patterns": [".gitkeep"]
+    // },
+
+    // {
+    //   "name": "views (ejs)",
+    //   "path": "views",
+    //   "file_exclude_patterns": [".gitkeep"]
+    // },
+
+    // {
+    //   "path": "tasks",
+    //   "file_exclude_patterns": [".gitkeep"]
+    // }
+
+    {
+      "name": "api/controllers",
+      "path": "api/controllers",
+      "file_exclude_patterns": [".gitkeep"]
+    },
+
+    {
+      "name": "api/models",
+      "path": "api/models",
+      "file_exclude_patterns": [".gitkeep"]
+    },
+
+	]
+}
