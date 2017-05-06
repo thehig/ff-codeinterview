@@ -4,11 +4,11 @@ The [spec](#specification) can be found at the bottom of this document
 
 ## Technologies/stacks
 
-* node, npm, yarn, sails, eslint, sublime, cmdr
+* node, npm, sails
 
 ## How to use
 
-* Lift the sails :dash: with `yarn start` or `npm run start`
+* Lift the sails :dash: with `npm run start`
 * Using a REST client like curl or postman, use `http://127.0.0.1:1337` for the url base path
 
 
@@ -46,23 +46,36 @@ The [spec](#specification) can be found at the bottom of this document
 
 ### Phase 3:
 
-* return first name, last name and current age of particular customer AND 
-* a random joke fetched from [external service](http://www.icndb.com/api/) with customer name interpolated
+* ~~return first name, last name~~
+* ~~current age of particular customer~~
+* ~~a random joke fetched from [external service](http://www.icndb.com/api/)~~
+* ~~with customer name interpolated~~
+
+### Phase 4:
+> because there's always at least one more than you think
+
+While implementing the above I was primarily focused on bringing up a stable server. I encountered some issues with waterline which cost me a number of hours. Because of this, I was primarily focused on getting all the functionality in before attempting a thorough testing strategy.
+
+* Unit test the
+  * Models
+  * Server
+  * Endpoint
+  * ICNDB integration
+  * Momentjs
+
+Additionally the following simplifications/assumptions were made:
+
+* sqlite3 switched for sails-disk dev storage
+* user IDs are autoincrementing integers, which can be considered data leakage
+* user authentication was not added
+* upon further re-reading of the [specification](#specification) the 'User' api should be called 'Customer'
+* icndb API calls are being made inside the UserController. This could lead to a DOS vector
+
 
 ---
 
 # ~~sqlite3~~
 > See [sails-disk](#sails-disk)
-
-### adaptor
-
-There are many adaptors for sqlite3 and sails.js. The most popular one in my initial search was waterline-sqlite3, although further investigation into the pros/cons of the different adaptors would be prudent prior to scale.
-
-**DEBUG MODE IS ENABLED IN THE ADAPTOR AND MIGRATE IS ENABLED IN THE MODEL**
-
-### data formats
-
-sqlite3s data formats are quite basic so some care should be taken with the date field. Additionally the **user ids are auto-incrementing integers**, which is bad practise as it can cause some data leakage.
 
 # sails-disk
 

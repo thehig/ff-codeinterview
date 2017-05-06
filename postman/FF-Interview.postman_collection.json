@@ -19,50 +19,6 @@
 			"response": []
 		},
 		{
-			"name": "user (sort id)",
-			"request": {
-				"url": "{{host}}/user?sort=id",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "user (sort fname)",
-			"request": {
-				"url": "http://127.0.0.1:1337/user?sort=first_name",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "user (sort lname)",
-			"request": {
-				"url": "{{host}}/user?sort=last_name",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "user (sort birth)",
-			"request": {
-				"url": "{{host}}/user?sort=birth_date",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
 			"name": "user",
 			"request": {
 				"url": "{{host}}/user",
@@ -96,9 +52,31 @@
 			"response": []
 		},
 		{
-			"name": "user (id 1)",
+			"name": "---",
 			"request": {
-				"url": "{{host}}/user/1",
+				"url": "",
+				"method": "PATCH",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user {{userId}}",
+			"request": {
+				"url": "{{host}}/user/{{userId}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user {{userId}}",
+			"request": {
+				"url": "{{host}}/user/{{userId}}",
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -106,7 +84,7 @@
 					"formdata": [
 						{
 							"key": "first_name",
-							"value": "Alan",
+							"value": "David",
 							"type": "text",
 							"enabled": true
 						},
@@ -129,15 +107,70 @@
 			"response": []
 		},
 		{
-			"name": "user (id 1)",
+			"name": "user {{userId}}",
 			"request": {
-				"url": "{{host}}/user/1",
+				"url": "{{host}}/user/{{userId}}",
 				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "---",
+			"request": {
+				"url": "",
+				"method": "PATCH",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users (id)",
+			"request": {
+				"url": "{{host}}/user?sort=id",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users (first_name)",
+			"request": {
+				"url": "{{host}}/user?sort=first_name",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users (last_name)",
+			"request": {
+				"url": "{{host}}/user?sort=last_name",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users (birth_day)",
+			"request": {
+				"url": "{{host}}/user?sort=birth_date",
+				"method": "GET",
+				"header": [],
+				"body": {},
 				"description": ""
 			},
 			"response": []
