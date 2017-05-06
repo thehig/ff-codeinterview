@@ -17,6 +17,50 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"url": "{{host}}/user",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"url": "{{host}}/user",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "David",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Higgins",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "birth_date",
+							"value": "01/01/2001",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

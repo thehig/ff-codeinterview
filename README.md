@@ -30,8 +30,8 @@ The [spec](#specification) can be found at the bottom of this document
   * ~~Install mocha, chai, sinon and hook in with grunt~~
   * ~~Loop in coffeescript for terse tests~~~
 * `users` role or group with `create`, `read`, `update`, `delete` (CRUD) permissions
-* Set up database (sqllite) with the columns: `id`, `first_name`, `last_name`, `birth_date`
-* Connect database to REST Api with JSON response format
+* ~~Set up database (sqllite) with the columns: `id`, `first_name`, `last_name`, `birth_date`~~
+* ~~Connect database to REST Api with JSON response format~~
 
 ### Phase 2:
 
@@ -44,6 +44,18 @@ The [spec](#specification) can be found at the bottom of this document
 
 
 ---
+
+# sqlite3
+
+### adaptor
+
+There are many adaptors for sqlite3 and sails.js. The most popular one in my initial search was waterline-sqlite3, although further investigation into the pros/cons of the different adaptors would be prudent prior to scale.
+
+**DEBUG MODE IS ENABLED IN THE ADAPTOR AND MIGRATE IS ENABLED IN THE MODEL**
+
+### data formats
+
+sqlite3s data formats are quite basic so some care should be taken with the date field. Additionally the **user ids are auto-incrementing integers**, which is bad practise as it can cause some data leakage.
 
 ---
 
