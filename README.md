@@ -20,7 +20,7 @@ The [spec](#specification) can be found at the bottom of this document
 
 * ~~Learn sails.js basics~~
 * ~Identify the tasks required for further phases (decompose the problem)~
-* Create a Postman collection that represents the API interactions
+* ~Create a Postman collection that represents the API interactions~
 * Determine how much additional stuff to add (eg: login, rate limiting)
 
 ### Phase 1:
@@ -35,17 +35,24 @@ The [spec](#specification) can be found at the bottom of this document
 
 ### Phase 2:
 
-* list all the customers in database sorted by one of the parameters passed in request (first, second name or date)
-* create, delete and edit customer data
+* ~~list all the customers in database sorted by one of the parameters passed in request~~
+  * ~~first_name~~ - `{{host}}/user?sort=first_name`
+  * ~~last_name~~ - `{{host}}/user?sort=last_name`
+  * ~~birth_date~~ - `{{host}}/user?sort=birth_date`
+* ~~CRUD customer data~~
+  * ~~create~~ - `POST` form-data to `{{host}}/user`
+  * ~~delete~~ - `DELETE` to `{{host}}/user/:id`
+  * ~~edit~~ - `PUT` form-data to `{{host}}/user/:id`
 
 ### Phase 3:
 
-* return first name, last name and current age of particular customer AND a random joke fetched from [external service](http://www.icndb.com/api/) with customer name interpolated
-
+* return first name, last name and current age of particular customer AND 
+* a random joke fetched from [external service](http://www.icndb.com/api/) with customer name interpolated
 
 ---
 
-# sqlite3
+# ~~sqlite3~~
+> See [sails-disk](#sails-disk)
 
 ### adaptor
 
@@ -56,6 +63,10 @@ There are many adaptors for sqlite3 and sails.js. The most popular one in my ini
 ### data formats
 
 sqlite3s data formats are quite basic so some care should be taken with the date field. Additionally the **user ids are auto-incrementing integers**, which is bad practise as it can cause some data leakage.
+
+# sails-disk
+
+Something went wrong with waterline-sqlite3 and I was unable to diagnose the problem within a reasonable timeframe. I tried succesfully to reproduce the issue in both Windows and Linux, but will address later time-permitting. For now, the database running using sails-disk is functionally close enough to sqlite3, and the process of changing from sails-disk to sqlite should be a straightforward affair thanks to MVC decomposition.
 
 ---
 
