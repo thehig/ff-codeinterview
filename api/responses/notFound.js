@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * 404 (Not Found) Handler

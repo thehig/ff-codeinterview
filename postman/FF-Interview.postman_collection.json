@@ -8,12 +8,136 @@
 	},
 	"item": [
 		{
-			"name": "{{host}}/{{api}}",
+			"name": "user",
 			"request": {
-				"url": "{{host}}/{{api}}",
+				"url": "{{host}}/user",
 				"method": "GET",
 				"header": [],
 				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user (sort id)",
+			"request": {
+				"url": "http://127.0.0.1:1337/user?sort=id",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user (sort fname)",
+			"request": {
+				"url": "http://127.0.0.1:1337/user?sort=first_name",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user (sort lname)",
+			"request": {
+				"url": "http://127.0.0.1:1337/user?sort=last_name",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user (sort birth)",
+			"request": {
+				"url": "http://127.0.0.1:1337/user?sort=birth_date",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"url": "{{host}}/user",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "David",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Higgins",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "birth_date",
+							"value": "01/01/2001",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user (id 1)",
+			"request": {
+				"url": "{{host}}/user/1",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Alan",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Higgins",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "birth_date",
+							"value": "01/01/2002",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user (id 1)",
+			"request": {
+				"url": "{{host}}/user/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []

@@ -7,3 +7,4 @@ describe '020.api-exists (at ' + url + ')', ->
       .get('/')
       .expect(200)
 
+# TODO: Test stupid endpoints that dont exist

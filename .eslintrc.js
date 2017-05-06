@@ -9,6 +9,7 @@
 // sails-eslint recommended .eslintrc - https://github.com/jasancheg/sails-eslint/blob/master/.eslintrc
 // Reduces initial error set to ~30
 module.exports = {
+  "parser": "babel-eslint",
   "extends": "eslint:recommended",
   "env": {
     "node": true
