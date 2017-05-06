@@ -67,8 +67,9 @@ Additionally the following simplifications/assumptions were made:
 
 * sqlite3 switched for sails-disk dev storage
 * user IDs are autoincrementing integers, which can be considered data leakage
-* User authentication was not added
-* Upon further re-reading of the [specification](#specification) the 'User' api should be called 'customer'
+* user authentication was not added
+* upon further re-reading of the [specification](#specification) the 'User' api should be called 'Customer'
+* icndb API calls are being made inside the UserController. This could lead to a DOS vector
 
 
 ---
