@@ -26,9 +26,9 @@ The [spec](#specification) can be found at the bottom of this document
 ### Phase 1:
 
 * ~~bring up sails app, tidy up with eslint~~
-* Establish and confirm testing framework
-  * Install mocha, chai, sinon and hook in with grunt
-  * Loop in coffeescript for terse tests
+* ~~Establish and confirm testing framework~~
+  * ~~Install mocha, chai, sinon and hook in with grunt~~
+  * ~~Loop in coffeescript for terse tests~~~
 * `users` role or group with `create`, `read`, `update`, `delete` (CRUD) permissions
 * Set up database (sqllite) with the columns: `id`, `first_name`, `last_name`, `birth_date`
 * Connect database to REST Api with JSON response format
