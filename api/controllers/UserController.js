@@ -7,6 +7,7 @@
 
 const actionUtil = require('../../node_modules/sails/lib/hooks/blueprints/actionUtil.js');
 const nets = require('nets');
+const moment = require('moment');
 
 module.exports = {
   // Implementation code taken from ./node_modules/sails/lib/hooks/blueprints/actions/findOne.js
@@ -19,6 +20,8 @@ module.exports = {
     query.exec(function found(err, matchingRecord) {
       if (err) { return res.serverError(err); }
       if (!matchingRecord) { return res.notFound('No record found with the specified `id`.'); }
+
+      matchingRecord.age = moment(matchingRecord.birth_date).toNow(true);
 
       // Insert ICNDB joke here - http://www.icndb.com/api/
 
