@@ -28,9 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  // localDiskDb: {
-  //   adapter: 'sails-disk'
-  // },
+  localDiskDb: {
+    adapter: 'sails-disk'
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -91,19 +91,19 @@ module.exports.connections = {
 
 
   // waterline-sqlite3 - https://www.npmjs.com/package/waterline-sqlite3
-  sqlitedb: {
-    /**
-     * Database instance type. Specify whether to store the database on disk
-     * or in memory.
-     */
-    adapter: 'waterline-sqlite3', // or 'memory'
-    /**
-     * Location of file if type='disk'
-     */
-    filename: './.tmp/ff-interview.sqlite',
-    /**
-     * Set to true to output SQL queries
-     */
-    debug: true
-  }
+  // sqlitedb: {
+  //   /**
+  //    * Database instance type. Specify whether to store the database on disk
+  //    * or in memory.
+  //    */
+  //   adapter: 'waterline-sqlite3', // or 'memory'
+  //   /**
+  //    * Location of file if type='disk'
+  //    */
+  //   filename: './.tmp/ff-interview.sqlite',
+  //   /**
+  //    * Set to true to output SQL queries
+  //    */
+  //   debug: true
+  // }
 };
