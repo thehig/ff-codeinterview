@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FF-Interview",
+		"_postman_id": "27ff78bd-a3c3-c0dd-9587-3742333b3d39",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{host}}/{{api}}",
+			"request": {
+				"url": "{{host}}/{{api}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
