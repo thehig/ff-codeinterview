@@ -5,7 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-var actionUtil = require('../../node_modules/sails/lib/hooks/blueprints/actionUtil.js');
+const actionUtil = require('../../node_modules/sails/lib/hooks/blueprints/actionUtil.js');
+const nets = require('nets');
 
 module.exports = {
   // Implementation code taken from ./node_modules/sails/lib/hooks/blueprints/actions/findOne.js
@@ -19,14 +20,26 @@ module.exports = {
       if (err) { return res.serverError(err); }
       if (!matchingRecord) { return res.notFound('No record found with the specified `id`.'); }
 
-      // Insert ICNDB joke here
+      // Insert ICNDB joke here - http://www.icndb.com/api/
 
-      if (req._sails.hooks.pubsub && req.isSocket) {
-        Model.subscribe(req, matchingRecord);
-        actionUtil.subscribeDeep(req, matchingRecord);
-      }
+      const icndbEndpoint = `http://api.icndb.com/jokes/random?firstName=${matchingRecord.first_name}&lastName=${matchingRecord.last_name}`;
 
-      res.ok(matchingRecord);
+      nets({ url: icndbEndpoint }, function(icndbErr, icndbResp, icndbBody) {
+        if (icndbErr) { return res.serverError(icndbErr); }
+
+        var icndbResult = JSON.parse(icndbBody.toString('utf8'));
+        console.log('icndbResult', icndbResult);
+
+        matchingRecord.joke_id = icndbResult.value.id;
+        matchingRecord.joke = icndbResult.value.joke;
+
+        if (req._sails.hooks.pubsub && req.isSocket) {
+          Model.subscribe(req, matchingRecord);
+          actionUtil.subscribeDeep(req, matchingRecord);
+        }
+
+        res.ok(matchingRecord);
+      });
     });
   }
 };
