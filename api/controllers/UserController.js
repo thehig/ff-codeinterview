@@ -22,13 +22,17 @@ module.exports = {
 
       // Insert ICNDB joke here - http://www.icndb.com/api/
 
-      const icndbEndpoint = `http://api.icndb.com/jokes/random?firstName=${matchingRecord.first_name}&lastName=${matchingRecord.last_name}`;
+      const icndbEndpoint = `http://api.icndb.com/jokes/random?escape=javascript&firstName=${matchingRecord.first_name}&lastName=${matchingRecord.last_name}`;
 
       nets({ url: icndbEndpoint }, function(icndbErr, icndbResp, icndbBody) {
         if (icndbErr) { return res.serverError(icndbErr); }
-
-        var icndbResult = JSON.parse(icndbBody.toString('utf8'));
-        console.log('icndbResult', icndbResult);
+        let icndbResult;
+        try {
+          icndbResult = JSON.parse(icndbBody.toString('utf8'));
+        }
+        catch (excp) {
+          return res.serverError(excp);
+        }
 
         matchingRecord.joke_id = icndbResult.value.id;
         matchingRecord.joke = icndbResult.value.joke;
