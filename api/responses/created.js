@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * 201 (CREATED) Response

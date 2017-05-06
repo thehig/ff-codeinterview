@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * 500 (Server Error) Response

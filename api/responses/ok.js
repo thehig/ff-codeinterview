@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * 200 (OK) Response
