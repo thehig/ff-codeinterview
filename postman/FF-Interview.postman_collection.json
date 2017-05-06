@@ -21,7 +21,7 @@
 		{
 			"name": "user (sort id)",
 			"request": {
-				"url": "http://127.0.0.1:1337/user?sort=id",
+				"url": "{{host}}/user?sort=id",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -43,7 +43,7 @@
 		{
 			"name": "user (sort lname)",
 			"request": {
-				"url": "http://127.0.0.1:1337/user?sort=last_name",
+				"url": "{{host}}/user?sort=last_name",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -54,7 +54,7 @@
 		{
 			"name": "user (sort birth)",
 			"request": {
-				"url": "http://127.0.0.1:1337/user?sort=birth_date",
+				"url": "{{host}}/user?sort=birth_date",
 				"method": "GET",
 				"header": [],
 				"body": {},
